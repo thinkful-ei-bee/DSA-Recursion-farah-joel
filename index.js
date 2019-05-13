@@ -5,6 +5,25 @@ function countDown(n) {
 }
 //countDown(5)
 
+const upperStr = function(str){
+  if (str === "") {
+    return "";
+}
+  const newChar = str[0].toUpperCase();
+
+  // Concatenate new data with reduced string for next iteration...
+  return newChar + upperStr(str.slice(1)); 
+}
+//console.log(upperStr('hello'));
+
+function arrayDoubler(arr) {
+  if(!arr.length) {
+    return []
+  }
+  return [arr[0] * 2, ...arrayDoubler(arr.slice(1))]
+}
+console.log(arrayDoubler([1, 2, 3]))
+
 // 01.) Counting Sheep
 function countingSheep(number) {
   if(number === 0) return
@@ -26,12 +45,14 @@ function powerCalculator(base, exponent) {
   console.log(raised)
   powerCalculator(raised, exponent - 1)
 }
-powerCalculator(10, 2)
+//powerCalculator(10, 2)
 
 // 03.) Reverse String
-function reverseString() {
+function reverseString(string, atCharacter) {
+  if(string.length === atCharacter) return
 
 }
+//reverseString("Hello World!", 0)
 
 // 04.) nth Triangular Number
 function triangularNumber() {
