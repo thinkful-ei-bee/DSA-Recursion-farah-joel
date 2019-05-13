@@ -1,3 +1,6 @@
+// Some examples from lecture included here. Scroll down and look for 
+// the numbers for the assignment
+
 function countDown(n) {
   if(n === 0) return
   console.log(n)
@@ -22,7 +25,40 @@ function arrayDoubler(arr) {
   }
   return [arr[0] * 2, ...arrayDoubler(arr.slice(1))]
 }
-console.log(arrayDoubler([1, 2, 3]))
+//console.log(arrayDoubler([1, 2, 3]))
+
+const isValid = function(str, open=0) {
+  if (str.length === 0) {
+      return open === 0;
+  }
+  if (open < 0) {
+      return false;
+  }
+  const char = str.charAt(0);
+  if (char === '(') {
+      open++;
+  }
+  if (char === ')') {
+      open--;
+  }
+  return isValid(str.slice(1), open);
+};
+//console.log(isValid('(((()))))'));
+
+const filter = function(arr, predicate){
+  //base case
+  if (!arr.length){
+      return [];
+  }
+  if (predicate(arr[0])) {
+      return [arr[0], ...filter(arr.slice(1), predicate)];
+  }
+  return filter(arr.slice(1), predicate);
+};
+
+let arr = [10,5,6,3,8];
+console.log(filter(arr, x => x < 7));
+
 
 // 01.) Counting Sheep
 function countingSheep(number) {
