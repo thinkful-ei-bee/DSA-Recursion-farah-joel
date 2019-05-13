@@ -85,9 +85,13 @@ function powerCalculator(base, exponent) {
 
 // 03.) Reverse String
 function reverseString(string, atCharacter) {
-  if(string.length === atCharacter) return
+  if(string === '') {return ''}
 
+  lastChar = string[string.length - 1];
+  lastChar + reverseString(string.slice(string.length - 1));
 }
+
+
 //reverseString("Hello World!", 0)
 
 // 04.) nth Triangular Number
