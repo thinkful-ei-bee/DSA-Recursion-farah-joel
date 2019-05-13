@@ -144,12 +144,11 @@ function fibonacci(number) {
 // 07.) Factorial
 function factorial(number) {
   if(number < 1) {
-    return
+    return 1;
   }
-  console.log(number)
-  factorial(number - 1)
+  return number * factorial(number - 1) 
 }
-factorial(5);
+// console.log(factorial(5));
 
 // 08.) Find a way out of the maze
 function maze() {
