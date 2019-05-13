@@ -55,10 +55,8 @@ const filter = function(arr, predicate){
   }
   return filter(arr.slice(1), predicate);
 };
-
-let arr = [10,5,6,3,8];
-console.log(filter(arr, x => x < 7));
-
+// let arr = [10,5,6,3,8];
+// console.log(filter(arr, x => x < 7));
 
 // 01.) Counting Sheep
 function countingSheep(number) {
@@ -84,15 +82,27 @@ function powerCalculator(base, exponent) {
 //powerCalculator(10, 2)
 
 // 03.) Reverse String
-function reverseString(string, atCharacter) {
-  if(string === '') {return ''}
+// function reverseString(string, atCharacter) {
+//   if(string === '') {return ''}
+  
+//   let endChar = string[string.length - 1];
+//   let newString = endChar + string.substring(0, string.length - 1);
+//   console.log(newString);
 
-  lastChar = string[string.length - 1];
-  lastChar + reverseString(string.slice(string.length - 1));
+//   // lastChar = string[string.length - 1];
+//   // lastChar + reverseString(string.slice(string.length - 1));
+// }
+// reverseString("Hello World!")
+
+function reverseString(str) {
+  if (str === "") {
+    return "";
+  }
+  else {
+    return reverseString(str.substr(1)) + str.charAt(0);
+  }
 }
-
-
-//reverseString("Hello World!", 0)
+console.log(reverseString('hello'))
 
 // 04.) nth Triangular Number
 function triangularNumber() {

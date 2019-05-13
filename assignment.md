@@ -3,13 +3,13 @@ What is the input to the program?
 The number of sheep.
 
 What is the output of the program?
-Text stating another sheep jumped over the fence
+Step number, Text stating another sheep jumped over the fence
 
 What is the input to each recursive call?
 The number of sheep minus 1
 
 What is the output of each recursive call?
-The number of sheep minus 1
+The number of sheep, jumped over
 
 2.) Power Calculator
 What is the input to the program?
@@ -58,7 +58,7 @@ What is the output of the program?
 02202020
 
 What is the input to each recursive call?
-The string
+The string sliced if character "/"
 
 What is the output of each recursive call?
 The string
