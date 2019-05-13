@@ -132,14 +132,24 @@ function stringSplitter(string, delimeter) {
 //console.log(stringSplitter('02/20/2020', '/'));
 
 // 06.) Fibonacci
-function fibonacci() {
-
+function fibonacci(number) {
+  if(number < 2) {
+    return number;
+  }
+  console.log(fibonacci(number - 1) + fibonacci(number - 2));
+  return fibonacci(number - 1) + fibonacci(number - 2)
 }
+//console.log(fibonacci(4))
 
 // 07.) Factorial
-function factorial() {
-
+function factorial(number) {
+  if(number < 1) {
+    return
+  }
+  console.log(number)
+  factorial(number - 1)
 }
+factorial(5);
 
 // 08.) Find a way out of the maze
 function maze() {

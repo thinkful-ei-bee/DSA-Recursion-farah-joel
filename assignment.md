@@ -66,7 +66,11 @@ The string minus the "/"
 
 6.) Fibonacci
 What is the input to the program?
+1
 What is the output of the program?
+The sequence of Fibonacci numbers after 1 up to a limit
+
 What is the input to each recursive call?
+the sum of the previous two numbers 
+
 What is the output of each recursive call?
-``
