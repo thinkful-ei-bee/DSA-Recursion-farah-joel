@@ -58,6 +58,22 @@ const filter = function(arr, predicate){
 // let arr = [10,5,6,3,8];
 // console.log(filter(arr, x => x < 7));
 
+//input: 5 output: 101
+// base case
+//  input <= 0
+//    return ''
+// take the input
+// input % 2 -> 0's and 1's
+// hold the 0s 1s + recursiveCall(input / 2 -> reduce the input)
+function binaryRep(input) {
+  if(input <= 0) {
+    return ''
+  }
+  let binary = Math.floor(input % 2);
+  return binaryRep(Math.floor(input / 2)) + binary;
+}
+//console.log(binaryRep(25))
+
 // 01.) Counting Sheep
 function countingSheep(number) {
   if(number === 0) return
@@ -82,18 +98,6 @@ function powerCalculator(base, exponent) {
 //powerCalculator(10, 2)
 
 // 03.) Reverse String
-// function reverseString(string, atCharacter) {
-//   if(string === '') {return ''}
-  
-//   let endChar = string[string.length - 1];
-//   let newString = endChar + string.substring(0, string.length - 1);
-//   console.log(newString);
-
-//   // lastChar = string[string.length - 1];
-//   // lastChar + reverseString(string.slice(string.length - 1));
-// }
-// reverseString("Hello World!")
-
 function reverseString(str) {
   if (str === "") {
     return "";
@@ -102,17 +106,43 @@ function reverseString(str) {
     return reverseString(str.substr(1)) + str.charAt(0);
   }
 }
-console.log(reverseString('hello'))
+//console.log(reverseString('hello'))
 
 // 04.) nth Triangular Number
-function triangularNumber() {
-
+function triangularNumber(n) {
+  if(n <= 1) {
+    return n;
+  } 
+  else {
+    return n + triangularNumber(n - 1)
+  }
 }
+//console.log(triangularNumber(3));
 
 // 05.) String Splitter
-function stringSplitter() {
-
+// if string length 0 return
+// if first character is '/' get rid of it
+// 
+// function stringSplitter(string, index) {
+//   if(string === '') {
+//     return '';
+//   }
+//   if(string.charAt(index) === '/') {
+//     stringSplitter(string.substr(index))
+//   }
+//   index++;
+//   return stringSplitter(string, index);
+// }
+function stringSplitter(string, delimeter) {
+  let index = string.search(delimeter);
+  if(index === -1) {
+    return string
+  }
+  let newString = string.substr(0, index);
+  let restOfString = string.substr(index + delimeter.length, string.length);
+  return newString + stringSplitter(restOfString, delimeter);
 }
+console.log(stringSplitter('02/20/2020', '/'));
 
 // 06.) Fibonacci
 function fibonacci() {

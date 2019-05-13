@@ -37,18 +37,19 @@ The next character in the string
 What is the output of each recursive call?
 The next character in the string in the opposite order
 
--- ? 4.) Calculate the nth triangular number
+4.) Calculate the nth triangular number
 What is the input to the program?
-The starting integer of 1, and the step it is on
+An integer 'n' representing the number of dots on the side of the triangle
 
 What is the output of the program?
-step numbers with corresponding number of points
+the total number of dots in the triangle
 
 What is the input to each recursive call?
-number of points, number of step
+n + triangularNumber(n - 1)
+the nth triangular number plus the nth triangular number minus 1
 
 What is the output of each recursive call?
-The input plus the step it is on. So for step 2, it would take 1 and add 2.
+the sum of the nth triangular number added to itself minus 1
 
 5.) String Splitter
 What is the input to the program?
@@ -58,10 +59,10 @@ What is the output of the program?
 02202020
 
 What is the input to each recursive call?
-The string sliced if character "/"
+If string has "/" keep everything before
 
 What is the output of each recursive call?
-The string
+The string minus the "/"
 
 6.) Fibonacci
 What is the input to the program?
