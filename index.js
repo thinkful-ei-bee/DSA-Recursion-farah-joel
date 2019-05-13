@@ -11,12 +11,22 @@ function countingSheep(number) {
   console.log(`${number}: Another sheep jump over the fence`)
   countingSheep(number - 1)
 }
-countingSheep(3)
+//countingSheep(3)
 
 // 02.) Power Calculator
-function powerCalculator() {
-
+function powerCalculator(base, exponent) {
+  if(exponent <= 0) {
+    console.log('exponent should be >= 0')
+    return
+  }
+  if(exponent === 1) {
+    return
+  }
+  let raised = base * base
+  console.log(raised)
+  powerCalculator(raised, exponent - 1)
 }
+powerCalculator(10, 2)
 
 // 03.) Reverse String
 function reverseString() {
