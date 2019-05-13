@@ -120,19 +120,6 @@ function triangularNumber(n) {
 //console.log(triangularNumber(3));
 
 // 05.) String Splitter
-// if string length 0 return
-// if first character is '/' get rid of it
-// 
-// function stringSplitter(string, index) {
-//   if(string === '') {
-//     return '';
-//   }
-//   if(string.charAt(index) === '/') {
-//     stringSplitter(string.substr(index))
-//   }
-//   index++;
-//   return stringSplitter(string, index);
-// }
 function stringSplitter(string, delimeter) {
   let index = string.search(delimeter);
   if(index === -1) {
@@ -142,7 +129,7 @@ function stringSplitter(string, delimeter) {
   let restOfString = string.substr(index + delimeter.length, string.length);
   return newString + stringSplitter(restOfString, delimeter);
 }
-console.log(stringSplitter('02/20/2020', '/'));
+//console.log(stringSplitter('02/20/2020', '/'));
 
 // 06.) Fibonacci
 function fibonacci() {
